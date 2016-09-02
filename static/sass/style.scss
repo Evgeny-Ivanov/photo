@@ -1,0 +1,136 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+nav ul a,
+nav .brand-мlogo {
+  color: #444;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.button-collapse {
+  color: white;
+}
+
+
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+.parallax-container .section {
+  width: 100%;
+}
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}
+
+.work-gallery {
+  display: flex;
+}
+
+.icon-top{
+  position: relative;
+  top: 3px;
+}
+
+.logo_position{
+  margin-top: 10px;
+  height: 40px;
+  width: 136px;
+}
+
+.gallery_center{
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.card_padding{
+  padding: 1% !important;
+}
+
+.card-title_font-size{
+  font-size: 1.25em !important;
+}
+
+.body-background{
+  background: #f6f4f1;
+}
+
+.content-margin {
+  $content-margin: 10px;
+  margin-top: $content-margin !important;
+  margin-bottom: $content-margin !important;
+}
+
+.fullscreen-height{
+  height: 100%;
+}
+
+.slider_fullscreen{
+  position: relative !important;
+}
+
+.form-reviews_padding{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.card-image_size{
+  height: 250px !important;
+}
+
+.delete-cursor{
+  cursor: pointer;
+}
+
+.review-close-button{
+   position: relative;
+   top: 10px;
+   right: 10px;
+}
+
+$duration : 500ms;
+
+.review-close-button_hide{
+  opacity: 0;
+  transition-duration: $duration;
+}
+
+.review-close-button_show{
+  opacity: 1;
+  transition-duration: $duration;
+}

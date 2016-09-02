@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row gallery_center">
+    {% for item in items %}
+    <div class="col m4 s4 card_padding">
+        <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="{{ item.img }}">
+            </div>
+            <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4 card-title_font-size">{{ item.title }}</span>
+                <p><a href="/prices/{{ item.name }}">Читать дальше</a></p>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4 card-title_font-size">{{ item.title }}<i class="material-icons right">close</i></span>
+                <p>Прогулочная фотосессия – это фотосессия во время прогулки. И хороша она тем, что ваши фотографии в городе (будь то на улице или в парке) на природе (лес, речка) отличаются от студийных съемок большей естественностью. </p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

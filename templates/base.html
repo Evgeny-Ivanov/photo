@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" class="fullscreen-height">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <title>Title</title>
+
+    <!-- CSS  -->
+    <link href="/css/icon.css" type="text/css" rel="stylesheet">
+    <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <script src="../lib/jquery-2.1.1.min.js"></script>
+    <script src="../js/materialize.js"></script>
+</head>
+<body class="body-background fullscreen-height">
+<nav class="blue lighten-3" role="navigation">
+    <div class="nav-wrapper container">
+        <a id="logo-container" href="#" class="brand-logo light-blue-text text-lighten-1"><img src="/LogoMakr.png" class="logo_position"></a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="/" class="white-text">О себе</a>
+            <li><a href="/works" class="white-text">Примеры работ</a>
+            <li><a href="/prices" class="white-text">Прайс-лист</a>
+            <li><a href="/reviews" class="white-text">Отзывы</a>
+            <li><a href="/contacts" class="white-text">Контакты</a>
+        </ul>
+
+        <ul id="nav-mobile" class="side-nav">
+            <li><a href="/">О себе</a>
+            <li><a href="/works">Примеры работ</a>
+            <li><a href="/prices">Прайс-лист</a>
+            <li><a href="/reviews">Отзывы</a>
+            <li><a href="/contacts">Контакты</a>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+</nav>
+
+{% block content %}
+{% endblock %}
+
+<footer class="page-footer brown lighten-2">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">О НАС</h5>
+                <p class="grey-text text-lighten-4">
+                    Студия фотографии Bulenkov.pro предлагает вам услуги команды
+                    фотографов, видеографов, стилистов, декораторов, ведущих
+                    Премиум класса.
+                    Работая с командой Bulenkov.pro, вы сможете переживать эти
+                    воспоминания изо дня в день.
+                </p>
+
+
+            </div>
+            <div class="col l6 s12">
+                <h5 class="white-text">КАК НАС НАЙТИ</h5>
+                <p class="grey-text text-lighten-4">
+                По вопросам связанным с услугами команды фотографов,
+                    видеографов, стилистов, декораторов, ведущих,
+                    свяжитесь с нами одним из способов:
+                <ul>
+                    <li class="white-text"><i class="tiny material-icons icon-top">location_on</i> Москва, Смоленская площадь д. 13/21</li>
+                    <li class="white-text"><i class="tiny material-icons icon-top">call</i> +7 903 708 79 02</li>
+                    <li class="white-text"><i class="tiny material-icons icon-top">email</i> wedding@bulenkov.pro</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2016 <a class="brown-text text-lighten-3" href="https://vk.com/id30830739">Анастасия Шахова</a>
+        </div>
+    </div>
+</footer>
+
+
+<!--  Scripts-->
+<script src="../js/init.js"></script>
+<script src="//localhost:35729/livereload.js"></script>
+</body>
+</html>

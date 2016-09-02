@@ -1,0 +1,5 @@
+nav.blue.lighten-3 {
+    background-color: rgba(0,0,0,0) !important;
+    position: absolute !important;
+    z-index: 1000 !important;
+}
