@@ -104,3 +104,6 @@ footer.page-footer {
 .review-close-button_show {
   opacity: 1;
   transition-duration: 500ms; }
+
+.contacts-margin {
+  margin-top: 2em; }
