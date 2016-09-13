@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-    <title>Title</title>
+    <title>Photo gallery</title>
 
     <!-- CSS  -->
     <link href="/css/icon.css" type="text/css" rel="stylesheet">
@@ -11,6 +11,9 @@
     <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <script src="../lib/jquery-2.1.1.min.js"></script>
     <script src="../js/materialize.js"></script>
+    {% if showTests %}
+        <link href="/lib/mocha.css" type="text/css" rel="stylesheet">
+    {% endif %}
 </head>
 <body class="body-background fullscreen-height">
 <nav class="blue lighten-3" role="navigation">
@@ -75,9 +78,24 @@
     </div>
 </footer>
 
-
 <!--  Scripts-->
 <script src="../js/init.js"></script>
 <script src="//localhost:35729/livereload.js"></script>
+{% if showTests %}
+    <div id="mocha"></div>
+    <script src="/lib/mocha.js"></script>
+    <script src="/lib/chai.js"></script>
+    <script>
+        mocha.ui('tdd');
+        var assert = chai.assert;
+    </script>
+    <script src="/qa/tests-global.js"></script>
+    {% if pageTestScripts %}
+        <script src="{{pageTestScripts}}"></script>
+    {% endif %}
+    <script>
+        mocha.run();
+    </script>
+{% endif %}
 </body>
 </html>

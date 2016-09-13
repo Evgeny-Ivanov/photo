@@ -12,10 +12,7 @@ module.exports = function (grunt) {
         watch: {
             sass: {
                 files: [
-                    'static/sass/**/*.scss',
-                    'static/js/**/*.js',
-                    'static/css/**/*.css',
-                    'templates/**/*.html'
+                    'static/sass/**/*.scss'
                 ],
                 tasks: ['sass'],
                 options: {
@@ -25,7 +22,6 @@ module.exports = function (grunt) {
             static: {
                 files: [
                     'static/js/**/*.js',
-                    'static/css/**/*.css',
                     'templates/**/*.html'
                 ],
                 options: {
@@ -41,8 +37,28 @@ module.exports = function (grunt) {
                 }
             }
         },
+        cafemocha: {
+          all: {
+              src: 'qa/tests-*.js',
+              options: { ui: 'tdd' }
+          }
+        },
+        jshint: {
+            options: {
+                "esversion": 6,
+                "node":true
+            },
+            app: ['app.js', 'helpers/**/*.js', 'routes/**/*.js', 'models/**/*.js'],
+            qa: ['Gruntfile.js', 'static/qa/**/*.js', 'qa/**/*.js']
+        },
         concurrent: {
-            target: ['shell', 'sass', 'watch'],
+            target: [
+                'jshint',
+                'cafemocha',
+                'shell',
+                'sass',
+                'watch'
+            ],
             options: {
                 logConcurrentOutput: true /* Вывод процесса */
             }
@@ -54,6 +70,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-concurrent');
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-shell');
+    grunt.loadNpmTasks('grunt-cafe-mocha');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
 
     grunt.registerTask('default', ['concurrent']);
 };

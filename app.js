@@ -51,18 +51,21 @@ passport.serializeUser(function (user, done) {
 passport.deserializeUser(function (data, done) {
     try {
         done(null, JSON.parse(data));
-    } catch (e) {
-        done(err)
+    } catch (err) {
+        done(err);
     }
 });
 
-app.use(function(req, res, next) {
+app.use(function (req,   res, next) {
     res.locals.user = req.user;
+    res.locals.showTests = app.get('env') !== 'production' &&
+        req.query.test === '1';
     next();
 });
 
 const dbUrl = 'mongodb://localhost:27017/photo';
 mongoose.connect(dbUrl);
+
 
 var upload = multer({ dest: 'uploads/' });
 
@@ -84,7 +87,19 @@ app.use('/reviews', reviews);
 app.use('/works', works);
 app.use('/admin', admin);
 
-const PORT = 8000;
-app.listen(PORT, function () {
-    console.log('Server listening on port ' + PORT);
+app.use(function(req, res) {
+    res.status(404);
+    res.render("404.html");
+});
+
+app.use(function (err, res, req, next) {
+    console.error(err.stack);
+    res.status(500);
+    res.render("500.html");
+});
+
+app.set("PORT", 8000);
+
+app.listen(app.get("PORT"), function () {
+    console.log('Server listening on port ' + app.get("PORT"));
 });

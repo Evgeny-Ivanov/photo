@@ -21,7 +21,7 @@ module.exports.sendEmailMessage = function({email, message, subject="тема п
 
     transporter.sendMail(mailOptions, function(error, info){
         if(error) {
-            console.log('Ошибка отправки: ' + error);
+            console.error('Ошибка отправки: ' + error);
         }
         else {
             console.log('Письмо успешно отправлено: ' + info.response);
