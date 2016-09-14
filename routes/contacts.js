@@ -23,7 +23,7 @@ function pasrseForm({email, message, phone, name}){
     return `<p><b>Имя:</b> ${name},</p>
             <p><b>Email:</b> ${email},</p>
             <p><b>Телефон:</b> ${phone}</p>,
-            <p><b>Сообщение:</b> ${message}</p>`
+            <p><b>Сообщение:</b> ${message}</p>`;
 }
 
 module.exports = router;
